@@ -49,7 +49,7 @@ public class TestAutoCloseable implements AutoCloseable {
 		try(var local = new TestAutoCloseable()) {
 		}
 		
-		System.out.println("");
+		System.out.println();
 		System.out.println("AutoCloseableをフィールドにいれた場合");
 		try (var holder = new AutoCloseableHolder()) {
 		}
