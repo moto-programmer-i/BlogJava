@@ -30,17 +30,17 @@ public class TestAutoCloseable implements AutoCloseable {
 		@Override
 		public void close() throws Exception {
 			// フィールドにいれたAutoCloseableを解放（逆の順番になってしまう）
-//			try (autoCloseable1; autoCloseable0) {
+//			try (autoCloseable2; autoCloseable1) {
 //			}
-			// TestAutoCloseable 0 close------------------
 			// TestAutoCloseable 1 close------------------
+			// TestAutoCloseable 2 close------------------
 			
 			// この順番でよい
 			// （ローカルで生成した場合と同じようにJava側で解放順を変えてくれる）
 			try (autoCloseable1; autoCloseable2) {
 			}
+//			TestAutoCloseable 2 close------------------
 //			TestAutoCloseable 1 close------------------
-//			TestAutoCloseable 0 close------------------
 		}
 	}
 
