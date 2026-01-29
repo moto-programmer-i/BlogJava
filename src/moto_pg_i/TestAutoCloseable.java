@@ -53,6 +53,17 @@ public class TestAutoCloseable implements AutoCloseable {
 		System.out.println("AutoCloseableをフィールドにいれた場合");
 		try (var holder = new AutoCloseableHolder()) {
 		}
+		
+		// 実行結果
+//		最も標準的な使い方
+//		TestAutoCloseable 0 constructor------------
+//		TestAutoCloseable 0 close------------------
+//
+//		AutoCloseableをフィールドにいれた場合
+//		TestAutoCloseable 1 constructor------------
+//		TestAutoCloseable 2 constructor------------
+//		TestAutoCloseable 2 close------------------
+//		TestAutoCloseable 1 close------------------
 	}
 
 }
